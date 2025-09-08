@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pavon Gurung — Front-End Developer</title>
+  <meta name="description" content="Front-End Developer in Atlanta. React, JavaScript, Python. Portfolio, projects, and contact." />
+  <meta property="og:title" content="Pavon Gurung — Front-End Developer" />
+  <meta property="og:description" content="React • JavaScript • Python. Selected projects and ways to reach me." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+</head>
+
+<body>
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <a class="brand" href="#top">PG</a>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact" class="btn btn--sm">Contact</a>
+    </nav>
+    <button id="menu" aria-label="Menu">☰</button>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <main id="top" class="hero">
+    <div class="hero__inner">
+      <p class="eyebrow">Front-End Developer</p>
+      <h1>Hi, I’m <span class="accent">Pavon Gurung</span> 👋</h1>
+      <p class="sub">
+        I build clean, performant interfaces with <b>React</b>, <b>JavaScript</b>, and <b>Python</b>.
+        Based in Atlanta, GA.
+      </p>
+      <div class="cta">
+        <a href="#projects" class="btn">View Projects</a>
+        <a href="#contact" class="btn btn--ghost">Get in touch</a>
+      </div>
+    </div>
+    <div class="grad"></div>
+  </main>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section">
+    <h2>About</h2>
+    <p>
+      I’m a front-end developer focused on creating accessible, responsive web apps.
+      I enjoy simple UX, tidy components, and shipping features that feel fast.
+      When I’m not coding, I’m watching football (soccer) or playing video games.
+    </p>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <ul class="pill-list">
+      <li>HTML5</li>
+      <li>CSS3</li>
+      <li>JavaScript (ES6+)</li>
+      <li>React</li>
+      <li>TypeScript</li>
+      <li>Python</li>
+      <li>Git & GitHub</li>
+      <li>REST APIs</li>
+    </ul>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="section">
+    <h2>Selected Projects</h2>
+
+    <div class="grid">
+      <!-- Project Card -->
+      <article class="card">
+        <div class="card__tag">TypeScript</div>
+        <h3>Movie Proxy</h3>
+        <p>
+          A TypeScript proxy service for handling streaming requests and
+          caching responses. Focus on DX and performance.
+        </p>
+        <div class="card__links">
+          <a class="btn btn--sm" href="https://github.com/pavongurung/movie-proxy" target="_blank" rel="noreferrer">GitHub</a>
+          <!-- <a class="btn btn--sm btn--ghost" href="#" target="_blank" rel="noreferrer">Live</a> -->
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__tag">Python</div>
+        <h3>Document QA</h3>
+        <p>
+          Answer questions from documents using NLP. CLI & web demo, with document loaders and evaluation scripts.
+        </p>
+        <div class="card__links">
+          <a class="btn btn--sm" href="https://github.com/pavongurung/document-qa" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__tag">React</div>
+        <h3>Personal Site</h3>
+        <p>
+          This portfolio. Built with semantic HTML/CSS, small JS, and deployed on GitHub Pages with a custom domain.
+        </p>
+        <div class="card__links">
+          <a class="btn btn--sm" href="https://github.com/pavongurung/pavongurung.github.io" target="_blank" rel="noreferrer">Source</a>
+          <a class="btn btn--sm btn--ghost" href="/" >Live</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Want to collaborate or say hi? Reach me here:</p>
+    <div class="contact">
+      <a class="btn" href="mailto:hello@pavongurung.me">hello@pavongurung.me</a>
+      <a class="btn btn--ghost" target="_blank" rel="noreferrer" href="https://github.com/pavongurung">GitHub</a>
+      <a class="btn btn--ghost" target="_blank" rel="noreferrer" href="https://linkedin.com/in/pavongurung">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© <span id="y"></span> Pavon Gurung · Built with GitHub Pages</p>
+  </footer>
+
+  <script>
+    // Mobile menu (minimal)
+    const menuBtn = document.getElementById('menu');
+    const nav = document.querySelector('.links');
+    menuBtn.addEventListener('click', () => nav.classList.toggle('open'));
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        if (id.length > 1) {
+          e.preventDefault();
+          document.querySelector(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          nav.classList.remove('open');
+        }
+      });
+    });
+
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
