@@ -97,6 +97,16 @@
             opacity: 1;
         }
 
+        /* SVG Specific Glow Effect */
+        .svg-glow {
+            transition: all 0.3s ease;
+        }
+        /* When the parent card (group) is hovered, make the svg glow blue */
+        .group:hover .svg-glow {
+            filter: drop-shadow(0 0 8px rgba(96, 165, 250, 0.8)); /* Blue-400 color glow */
+            transform: scale(1.1); /* Subtle pop effect */
+        }
+
         /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #000; }
@@ -179,7 +189,12 @@
                         <a href="https://dailycosmos.pavongurung.me" target="_blank" class="card group rounded-xl p-6 lg:p-8 flex flex-col md:flex-row gap-6 hover:bg-white/5 transition-colors">
                             <!-- Project Thumbnail -->
                             <div class="w-full md:w-32 h-20 rounded bg-gradient-to-br from-blue-900 to-slate-900 flex items-center justify-center border border-white/10 group-hover:border-blue-500/50 transition-colors">
-                                <span class="text-2xl">🪐</span>
+                                <!-- SVG Icon with Glow Effect -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="svg-glow w-8 h-8 text-blue-300 group-hover:text-white transition-colors" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M18.816 13.58c2.292 2.138 3.546 4.03 3.184 5.42c-.864 3.313 -7.948 1.008 -15.81 -5.146c-7.861 -6.154 -8.872 -10.823 -8.008 -14.136c.362 -1.39 2.254 -.94 5.42 1.184" />
+                                    <circle cx="12" cy="12" r="7" />
+                                </svg>
                             </div>
                             
                             <div class="flex-1">
@@ -188,7 +203,7 @@
                                     <svg class="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                                 </h3>
                                 <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                                    A space explorer that connects to NASA's APOD API. It lets you time-travel through past images, and looks great on mobile.
+                                    A space explorer that connects to NASA's APOD API. It lets you time-travel through past images, handles videos automatically, and looks great on mobile.
                                 </p>
                                 <div class="flex flex-wrap gap-2">
                                     <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-xs font-medium">React.js</span>
